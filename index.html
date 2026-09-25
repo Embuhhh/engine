@@ -2,24 +2,60 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ENGINEERING - Industrial Solutions</title>
-<link rel="stylesheet" href="style.css">
+<title>ENGINEERING</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#ffde9a;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.top{width:100%;padding:12px 20px;font-size:12px;font-weight:700;background:#ffde9a}
+.wrap{width:90%;max-width:380px;margin:40px auto;background:#fff;border-radius:48px;padding:30px 20px 50px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+.stack{position:relative;width:220px;height:300px;margin:40px auto}
+.card{position:absolute;width:100%;height:220px;background:#ff9f1c;border-radius:28px 28px 28px 0;padding:20px;color:#fff;font-weight:800;cursor:pointer;transition:all .4s cubic-bezier(.68,-0.55,.27,1.55);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.card:nth-child(1){z-index:4;transform:translateY(0)}
+.card:nth-child(2){z-index:3;transform:translateY(-18px) scale(.97);opacity:.9}
+.card:nth-child(3){z-index:2;transform:translateY(-36px) scale(.94);opacity:.8}
+.card:nth-child(4){z-index:1;transform:translateY(-54px) scale(.91);opacity:.7}
+.card.active{transform:translateY(0) scale(1)!important;z-index:10!important;opacity:1!important}
+.icon{font-size:52px;margin-top:30px}
+.arrow{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:#fff;width:50px;height:36px;border-radius:0 0 24px 24px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 10px rgba(0,0,0,.05)}
+.header{position:sticky;top:0;width:100%;background:#0a3d62;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;z-index:20}
+.header a{color:#ffde9a;text-decoration:none;font-size:12px;margin-left:10px}
+</style>
 </head>
 <body>
-<header style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0">
-<div style="font-weight:900;color:#0a3d62">ENGINEERING</div>
-<nav style="font-size:13px"><a href="index.html">HOME</a> | <a href="about.html">ABOUT</a> | <a href="blog.html">PROJECTS</a> | <a href="photos.html">GALLERY</a></nav>
-</header>
-<section style="background:#0a3d62;color:#fff;text-align:center;padding:70px 20px">
-<h1>INDUSTRIAL SOLUTIONS<br>FOR EAST JAVA</h1>
-<p>Design & Build | Fabrication | Welding | Maintenance<br>Surabaya - Sidoarjo</p>
-<a href="https://wa.me/6281234567890" style="background:#f1c40f;color:#000;padding:12px 24px;border-radius:4px;display:inline-block;margin-top:15px;font-weight:bold;text-decoration:none">HUBUNGI WHATSAPP</a>
-</section>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;padding:30px 20px;max-width:1000px;margin:auto">
-<div style="background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);text-align:center"><div style="font-size:32px">🏗️</div><h3>Steel Structure</h3><p>Konstruksi baja & gudang industri</p></div>
-<div style="background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);text-align:center"><div style="font-size:32px">⚙️</div><h3>Fabrication</h3><p>Pipa, tangki & custom metal work</p></div>
-<div style="background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);text-align:center"><div style="font-size:32px">🔧</div><h3>Maintenance</h3><p>Maintenance pabrik & workshop</p></div>
+<div class="header">
+<b>ENGINEERING</b>
+<div><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="photos.html">GALLERY</a></div>
 </div>
-<footer style="background:#111;color:#777;text-align:center;padding:20px;margin-top:30px">© 2026 ENGINEERING - Surabaya</footer>
+<div class="top">Designed for Industrial | Surabaya - Sidoarjo</div>
+
+<div class="wrap">
+<div class="stack" id="stack">
+<div class="card" style="background:#0a3d62" onclick="next()"><div>STEEL STRUCTURE</div><div class="icon">🏗️</div></div>
+<div class="card" style="background:#ff9f1c" onclick="next()"><div>FABRICATION</div><div class="icon">⚙️</div></div>
+<div class="card" style="background:#e76f51" onclick="next()"><div>WELDING</div><div class="icon">🔧</div></div>
+<div class="card" style="background:#2a9d8f" onclick="next()"><div>MAINTENANCE</div><div class="icon">🛠️</div></div>
+</div>
+<div class="arrow" onclick="next()">▼</div>
+<p style="text-align:center;margin-top:20px;font-weight:700;color:#333">Tap kartu untuk slide ke bawah ↓</p>
+<p style="text-align:center;font-size:12px;color:#888;margin-top:8px">ENGINEERING - Industrial Solutions<br>Surabaya | Sidoarjo | Gresik</p>
+</div>
+
+<script>
+let cards = document.querySelectorAll('.card');
+function next(){
+ let first = document.getElementById('stack').firstElementChild;
+ document.getElementById('stack').appendChild(first);
+ update();
+}
+function update(){
+ document.querySelectorAll('.card').forEach((c,i)=>{
+   c.style.zIndex = 4-i;
+   if(i==0){c.style.transform='translateY(0) scale(1)';c.style.opacity=1}
+   else if(i==1){c.style.transform='translateY(-18px) scale(.97)';c.style.opacity=.9}
+   else if(i==2){c.style.transform='translateY(-36px) scale(.94)';c.style.opacity=.8}
+   else{c.style.transform='translateY(-54px) scale(.91)';c.style.opacity=.7}
+ });
+}
+</script>
 </body>
 </html>
