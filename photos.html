@@ -1,5 +1,85 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gallery - ENGINEERING</title><link rel="stylesheet" href="style.css"></head><body>
-<header style="display:flex;justify-content:space-between;padding:12px 20px;background:#fff;border-bottom:1px solid #eee"><div style="font-weight:900;color:#0a3d62">ENGINEERING</div><nav><a href="index.html">HOME</a> | <a href="about.html">ABOUT</a> | <a href="blog.html">PROJECTS</a> | <a href="photos.html">GALLERY</a></nav></header>
-<div style="padding:40px 20px;text-align:center"><h1>Gallery</h1><p>Foto Proyek Engineering - Surabaya Sidoarjo</p><div class="services"><div class="card">Project 1<br>🏗️</div><div class="card">Project 2<br>⚙️</div><div class="card">Project 3<br>🔧</div></div><p style="margin-top:20px">Untuk update foto, bisa upload langsung di folder ini nanti.</p></div>
-<footer style="background:#111;color:#777;text-align:center;padding:20px">© 2026 ENGINEERING</footer>
-</body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SHOWCASE - ENGINEERING</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f2f2f2}
+.header{background:linear-gradient(to right,#4d0000,#a80000,#4d0000);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.header .logo{font-weight:900;font-size:18px}
+.header .logo span{color:#ffcc00}
+.menu{font-size:10px;display:flex;gap:16px}
+.menu a{color:#fff;text-decoration:none;opacity:.8}
+.menu a.active{opacity:1;font-weight:bold;border-bottom:2px solid #ffcc00}
+.title{text-align:center;padding:16px;color:#c00000;font-size:14px}
+.tabs{display:flex;gap:8px;padding:10px 16px;flex-wrap:wrap;background:#fff;border-top:1px solid #ddd}
+.tabs button{border:none;padding:5px 10px;font-size:10px;cursor:pointer;background:#eee}
+.tabs button.active{background:#8b0000;color:#fff}
+.gallery{background:#fff;padding:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.photo{border:2px solid #bbb;padding:2px;background:#fff;box-shadow:0 8px 6px -6px rgba(0,0,0,.5);cursor:pointer}
+.photo img{width:100%;height:90px;object-fit:cover;display:block}
+/* POPUP KAYA KRR */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:999}
+#lightbox.show{display:flex}
+.box{background:#fff;padding:6px;max-width:90%;width:400px;position:relative;box-shadow:0 0 20px #000}
+.box img{width:100%;display:block}
+.box .bottom{display:flex;justify-content:space-between;align-items:center;padding:6px 4px 2px;font-size:10px}
+.closeBtn{background:#222;color:#fff;border:none;padding:3px 10px;font-size:10px;cursor:pointer}
+.footer{background:linear-gradient(to right,#2b0000,#7a0000);height:35px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo">⚙️ ENGINEERING<br><small style="font-size:9px">PT ENGINEERING SURABAYA</small></div>
+<div class="menu"><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="photos.html" class="active">SHOWCASE</a><a href="#">CONTACT</a></div>
+</div>
+<div class="title">WELDING PROJECT</div>
+
+<div class="tabs">
+<button class="active" onclick="filterGallery('all',this)">ALL</button>
+<button onclick="filterGallery('steel',this)">STEEL</button>
+<button onclick="filterGallery('fab',this)">FABRICATION</button>
+<button onclick="filterGallery('weld',this)">WELDING</button>
+</div>
+
+<div class="gallery" id="gallery">
+<div class="photo steel" onclick="openBox(this)"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500"></div>
+<div class="photo fab" onclick="openBox(this)"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500"></div>
+<div class="photo weld" onclick="openBox(this)"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500"></div>
+<div class="photo steel" onclick="openBox(this)"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500"></div>
+<div class="photo fab" onclick="openBox(this)"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500"></div>
+</div>
+
+<!-- LIGHTBOX POPUP PERSIS KRR -->
+<div id="lightbox" onclick="closeBox()">
+<div class="box" onclick="event.stopPropagation()">
+<img id="bigImg" src="">
+<div class="bottom">
+<span>◀ ▶ ● 1/5</span>
+<button class="closeBtn" onclick="closeBox()">CLOSE &nbsp; x</button>
+</div>
+</div>
+</div>
+
+<div class="footer"></div>
+
+<script>
+function filterGallery(cat,btn){
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.photo').forEach(p=>{
+   p.style.display = (cat==='all' || p.classList.contains(cat)) ? 'block' : 'none';
+ });
+}
+function openBox(el){
+ document.getElementById('bigImg').src = el.querySelector('img').src;
+ document.getElementById('lightbox').classList.add('show');
+}
+function closeBox(){
+ document.getElementById('lightbox').classList.remove('show');
+}
+</script>
+</body>
+</html>
