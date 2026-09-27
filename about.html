@@ -1,26 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About - ENGGAL JAYA</title>
+<title>About</title>
 <style>
-body{margin:0;background:#111;color:#fff;font-family:sans-serif;padding-bottom:100px}
-.header{text-align:center;padding:30px;background:#222}
-.header h1{letter-spacing:5px;margin:0}
-.content{max-width:700px;margin:40px auto;padding:20px;text-align:center;line-height:1.7}
-.footer{text-align:center;padding:20px;background:#000;margin-top:60px}
-.footer a{color:#00dbde;text-decoration:none;margin:0 10px}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f0f0f;color:#e0e0e0;font-family:Lato,sans-serif;line-height:1.6}
+.header{padding:40px 20px;text-align:center;background:#181818;border-bottom:1px solid #222}
+.header h1{letter-spacing:8px;font-size:28px;color:#fff}
+.header p{letter-spacing:3px;color:#888;font-size:12px;margin-top:8px}
+.nav{margin-top:20px}
+.nav a{color:#aaa;text-decoration:none;margin:0 15px;font-size:13px;letter-spacing:2px;transition:.3s}
+.nav a:hover,.nav a.active{color:#00dbde}
+.container{max-width:900px;margin:0 auto;padding:60px 20px}
+.container h2{text-align:center;letter-spacing:4px;margin-bottom:30px;color:#fff}
+.container p{text-align:center;color:#999;max-width:600px;margin:0 auto 20px}
+.divider{width:50px;height:2px;background:linear-gradient(90deg,#00dbde,#fc00ff);margin:30px auto}
+.footer{text-align:center;padding:30px;background:#000;border-top:1px solid #222;margin-top:60px}
+.footer a{color:#00dbde;text-decoration:none;margin:0 10px;font-size:12px}
+.footer .credit{margin-top:15px;color:#666;font-size:11px;letter-spacing:2px}
+/* WA */
 .wa-wrapper{position:fixed;bottom:35px;right:15px;display:flex;align-items:center;gap:8px;z-index:99999}
-.wa-bubble{background:#25D366;color:#fff;padding:8px 16px;border-radius:20px;font-size:14px}
-.wa-btn{width:55px;height:55px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.4)}
-.wa-btn img{width:32px;height:32px}
+.wa-bubble{background:#25D366;color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.3);font-family:sans-serif}
+.wa-btn{width:55px;height:55px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.wa-btn img{width:30px;height:30px}
 </style>
 </head>
 <body>
-<div class="header"><h1>ENGGAL JAYA</h1><p>General Contractor</p></div>
-<div class="content"><h2>About Us</h2><p>ENGGAL JAYA bergerak di bidang konstruksi dan engineering.</p></div>
-<div class="footer"><a href="home.html">← Back to Home</a><a href="#">↑ Top</a><br><br>design by Embuh</div>
-<div class="wa-wrapper"><div class="wa-bubble">Butuh bantuan?</div><a href="https://wa.me/6283856058316?text=Halo%20ENGGAL%20JAYA" target="_blank" class="wa-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a></div>
+
+<div class="header">
+  <h1>ENGGAL JAYA</h1>
+  <p>ENGINEERING</p>
+  <div class="nav">
+    <a href="home.html">HOME</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="showcase.html">SHOWCASE</a>
+  </div>
+</div>
+
+<div class="container">
+  <h2>ABOUT US</h2>
+  <div class="divider"></div>
+  <p><b style="color:#fff">ENGGAL JAYA</b> bergerak di bidang repair mechine, silinder head. Kami berfokus pada kualitas, ketepatan waktu, dan kepuasan client.</p>
+  <p>Dengan pengalaman dan tim profesional, kami siap mengerjakan.</p>
+  <p style="margin-top:40px;color:#fff;letter-spacing:2px">KOMITMEN KAMI: KUALITAS TERJAMIN</p>
+</div>
+
+<div class="footer">
+  <div>
+    <a href="home.html">← Back to Home</a>
+    <a href="#">↑ Top</a>
+  </div>
+  <div class="credit">design by Embuh</div>
+</div>
+
+<div class="wa-wrapper">
+  <div class="wa-bubble">Butuh bantuan?</div>
+  <a href="https://wa.me/6283856058316?text=Halo%20ENGGAL%20JAYA" target="_blank" class="wa-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+  </a>
+</div>
+
 </body>
 </html>
