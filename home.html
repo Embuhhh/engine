@@ -2,73 +2,32 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ENGGALJAYA - HOME</title>
+<title>ENGGAL JAYA - HOME</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f2f2f2}
-.header{background:linear-gradient(to right,#4d0000,#a80000,#4d0000);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:18px;line-height:1}
-.logo small{font-size:9px;letter-spacing:1.5px;font-weight:700}
-.menu{font-size:13px;display:flex;gap:18px}
-.menu a{color:#fff;text-decoration:none;opacity:.8}
+body{background:#f2f2f2;padding-bottom:80px}
+.header{background:linear-gradient(to right,#4d0000,#a80000,#4d0000);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo{display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap}
+.logo-icon{font-size:26px}
+.logo-text{line-height:1.1}
+.logo-text b{display:block;font-weight:900;font-size:17px;letter-spacing:1px;white-space:nowrap}
+.logo-text small{display:block;font-size:9px;letter-spacing:2px;opacity:.9;white-space:nowrap;font-weight:700}
+.menu{font-size:12px;display:flex;gap:12px;flex-shrink:0;align-items:center}
+.menu a{color:#fff;text-decoration:none;opacity:.8;white-space:nowrap;padding-bottom:2px}
 .menu a.active{opacity:1;font-weight:bold;border-bottom:2px solid #ffcc00}
-.hero{position:relative;height:380px;background:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200') center/cover}
-.hero::after{content:'';position:absolute;inset:0;background:rgba(80,0,0,.6)}
-.hero-text{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:90%}
-.hero-text h1{font-size:28px;letter-spacing:2px}
+.hero{position:relative;height:420px;background:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200') center/cover}
+.hero::after{content:'';position:absolute;inset:0;background:rgba(80,0,0,.65)}
+.hero-text{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:92%}
+.hero-text h1{font-size:28px;letter-spacing:1.5px;line-height:1.2}
 .hero-text h1 span{color:#ffcc00}
-.hero-text p{font-size:13px;margin-top:10px;letter-spacing:1px}
-.btn{display:inline-block;margin-top:16px;padding:10px 22px;background:#ffcc00;color:#4d0000;font-weight:800;font-size:13px;text-decoration:none}
-.about{background:#fff;padding:35px 22px;text-align:center}
-.about h2{color:#8b0000;font-size:20px;letter-spacing:2px;margin-bottom:16px}
-.about p{font-size:18px;color:#222;line-height:1.8;max-width:650px;margin:auto}
-/* FIX WA NGAMBANG - INI KUNCINYA */
-.wa-wrapper{position:fixed;bottom:20px;right:18px;z-index:9999;display:flex;align-items:center;gap:10px}
-.wa-bubble{background:#fff;color:#333;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;box-shadow:0 3px 12px rgba(0,0,0,.2)}
-.wa-btn{width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.3)}
-.wa-btn img{width:30px;height:30px}
-.footer{background:linear-gradient(to right,#2b0000,#7a0000,#2b0000);min-height:44px;display:flex;justify-content:space-between;align-items:center;padding:10px 18px;color:#fff;font-size:12px}
-.footer a{color:#fff;text-decoration:none}
-</style>
-</head>
-<body>
-<div class="header">
-<div class="logo">⚙️<br><small>ENGGAL JAYA</small></div>
-<div class="menu">
-<a href="home.html" class="active">HOME</a>
-<a href="about.html">ABOUT</a>
-<a href="photos.html">SHOWCASE</a>
-<a href="#">CONTACT</a>
-</div>
-</div>
-<div class="hero">
-<div class="hero-text">
-<h1>KOLTER & <span>GRINDING</span><br>SLEEVE CRANKSHAFT</h1>
-<p>PROFESSIONAL STEEL STRUCTURE - ENGINEERING SURABAYA</p>
-<a class="btn" href="photos.html">VIEW SHOWCASE →</a>
-</div>
-</div>
-<div class="about">
-<h2>WELCOME TO ENGGAL JAYA</h2>
-<p>
-ENGGAL JAYA bergerak di bidang kolter, grinding, sleeve crankshaft, dan silinder head di Sidoarjo.<br><br>
-Kami berkomitmen memberikan kualitas terbaik dan harga kompetitif.<br><br>
-Komitmen kami: <b>Kualitas Terjamin, Kepuasan Client.</b><br><br>
-Kami menawarkan layanan teknik yang terpadu dan beragam. Dirancang untuk memenuhi kebutuhan spesifik bengkel Anda dengan kualitas terjamin.
-</p>
-</div>
-<div class="footer">
-<a href="home.html">← Back to Home</a>
-<div>design by Embuh</div>
-<a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Home ↑ top</a>
-</div>
-
-<div class="wa-wrapper">
-  <div class="wa-bubble">Butuh bantuan?</div>
-  <a href="https://wa.me/6283856058316?text=Halo%20ENGGAL%20JAYA" target="_blank" class="wa-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-  </a>
-</div>
-
-</body>
-</html>
+.hero-text p{font-size:12px;margin-top:12px;letter-spacing:1px;line-height:1.5}
+.btn{display:inline-block;margin-top:18px;padding:10px 22px;background:#ffcc00;color:#4d0000;font-weight:800;font-size:13px;text-decoration:none;border-radius:2px}
+.about{background:#fff;padding:35px 20px 40px 20px}
+.about h2{color:#8b0000;font-size:20px;letter-spacing:2px;margin-bottom:18px;text-align:center;font-weight:800}
+.about p{font-size:18px;color:#222;line-height:1.85;text-align:left;white-space:normal;word-wrap:break-word;max-width:100%}
+.footer{background:linear-gradient(to right,#2b0000,#7a0000,#2b0000);min-height:46px;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;color:#fff;font-size:11px}
+.footer a{color:#fff;text-decoration:none;opacity:.9}
+/* WA MENGAMBANG FIX */
+.wa-wrapper{position:fixed;bottom:20px;right:14px;z-index:9999;display:flex;align-items:center;gap:10px}
+.wa-bubble{background:#fff;color:#222;padding:8px 14px;border-radius:22px;font-size:13px;font-weight:600;box-shadow:0 3px 15px rgba(0,0,0,.25)}
+.wa-btn{width
