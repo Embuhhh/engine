@@ -31,6 +31,29 @@ body{background:#f2f2f2}
 .wa-bubble{background:#25D366;color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
 .wa-btn{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.3)}
 .wa-btn img{width:30px;height:30px}
+  /* FIX HEADER BIAR CONTACT GAK KE POTONG DI HP */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 5px !important;
+  }
+  
+  .logo img {
+    width: 165px !important; /* jangan 240 di HP, 165 aja biar gak makan tempat */
+  }
+
+  nav, .menu, .navbar {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    margin-left: 10px !important;
+  }
+
+  nav a, .menu a {
+    font-size: 13px !important;
+    padding: 0 8px !important;
+    flex-shrink: 0;
+  }
+}
 </style>
 </head>
 <body>
