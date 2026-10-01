@@ -4,8 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-body{display:flex;height:100vh;justify-content:center;align-items:center;text-align:center;background:#222;overflow:hidden;margin:0;font-family:'Poppins',sans-serif;flex-direction:column}
-.title{position:relative;z-index:10;color:#fff;font-size:2rem;letter-spacing:0.3em;text-shadow:0 0 10px #00dbde;margin-bottom:20px}
+body{display:flex;height:100vh;justify-content:center;align-items:center;text-align:center;background:#222;overflow:hidden;margin:0;font-family:'Poppins',sans-serif}
 .btn{position:relative;z-index:10;padding:1rem 3rem;font-weight:700;font-size:1.5rem;color:#fff;text-decoration:none;background:linear-gradient(90deg,#00dbde,#fc00ff,#00dbde);background-size:300%;border-radius:2em;cursor:pointer;display:inline-block;animation:glow 8s linear infinite}
 .btn::before{position:absolute;content:"";top:-5px;left:-5px;bottom:-5px;right:-5px;z-index:-1;background:inherit;border-radius:4em;opacity:0;transition:.5s}
 .btn:hover::before{opacity:1;filter:blur(20px)}@keyframes glow{to{background-position:300%}}
@@ -17,11 +16,10 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-e
 <div id="tap">🔊 TAP LAYAR UNTUK NYALAIN LAGU</div>
 <canvas></canvas>
 
-<audio id="musikEnggal" loop preload="auto" autoplay>
+<audio id="musikEnggal" loop autoplay>
   <source src="./Kantata Takwa - Kesaksian.mp3" type="audio/mpeg">
 </audio>
 
-<div class="title">ENGGAL JAYA</div>
 <a href="home.html" class="btn">ENTER</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
