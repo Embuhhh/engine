@@ -2,6 +2,7 @@
 <html>
 <head>
    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Lato);
 body {
   display: flex;
@@ -12,12 +13,14 @@ body {
   background: #222;
   overflow: hidden;
   margin:0;
+  font-family: 'Poppins', sans-serif;
 }
 .btn {
   position: relative;
   z-index: 10;
   padding: 1rem 3rem;
-  font-family: Lato, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight:700;
   font-size: 1.5rem;
   line-height: 1.5;
   color: white;
@@ -29,6 +32,7 @@ body {
   user-select: none;
   display: inline-block;
   animation: glow 8s linear infinite;
+  transition: all 0.5s ease;
 }
 .btn::before {
   position: absolute;
@@ -54,10 +58,25 @@ canvas{
   z-index: 1;
   pointer-events: none;
 }
+/* pas jadi replay, pindah ke pojok */
+.btn.replay-mode{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+}
   </style>
 </head>
 <body>
   <canvas></canvas>
+  <audio id="musikEnggal" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <a href="https://embuhhh.github.io/engine/home.html" class="btn" id="tombolAjaib">ENTER</a>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
  <script>
   p = [[389,246,0],[410,255,20],[413,268,7],[431,261,12],[418,244,30],[416,217,25],[420,205,8],[427,227,-20],[432,236,5],[444,228,12],[451,232,41],[446,246,72],[443,264,96],[446,278,65],[463,267,20],[460,258,-10],[464,243,-20],[459,233,0],[475,225,22],[484,225,29],[490,214,51],[476,202,55],[462,202,55],[446,205,42],[440,192,42],[430,183,72],[413,184,58],[406,191,32],[406,207,0],[402,220,0],[390,222,20],[385,228,10],[389,246,0]];
@@ -82,7 +101,34 @@ canvas{
   requestAnimationFrame(render);
   </script>
 
-  <a href="https://embuhhh.github.io/engine/home.html" class="btn">ENTER</a>
+  <script>
+    const tombol = document.getElementById('tombolAjaib');
+    const musik = document.getElementById('musikEnggal');
+    let sudahEnter = false;
+
+    tombol.addEventListener('click', function(e){
+      if(!sudahEnter){
+        e.preventDefault(); // tahan dulu jangan pindah halaman
+        musik.play();
+        tombol.innerText = '🔁 REPLAY';
+        tombol.classList.add('replay-mode');
+        sudahEnter = true;
+
+        // simpen biar di home.html lagu auto nyala
+        localStorage.setItem('enggal_play', 'true');
+
+        // setelah 1 detik baru masuk menu
+        setTimeout(()=>{
+          window.location.href = tombol.href;
+        }, 1000);
+      } else {
+        // kalau udah jadi replay, cuma replay lagu
+        e.preventDefault();
+        musik.currentTime = 0;
+        musik.play();
+      }
+    });
+  </script>
 
 </body>
 </html>
