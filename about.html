@@ -50,9 +50,14 @@ body{background:#f2f2f2}
 <div class="wa-wrapper"><div class="wa-bubble">Butuh bantuan?</div><a href="https://wa.me/6283856058316?text=Halo%20ENGGAL%20JAYA" target="_blank" class="wa-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a></div>
 
 <!-- LAGU -->
-<audio id="musikEnggal" loop preload="auto">
-  <source src="lagu.mp3" type="audio/mpeg">
+<audio id="musikEnggal" loop autoplay>
+  <source src="../Kantata Takwa - Kesaksian.mp3" type="audio/mpeg">
 </audio>
+<script>
+  const musik = document.getElementById('musikEnggal');
+  musik.volume = 0.8;
+  musik.play().catch(()=>{});
+</script>
 <div id="tap">
   <div style="font-size:50px">🔊</div>
   <div style="margin-top:10px;font-weight:bold;letter-spacing:2px">TAP UNTUK MEMUTAR MUSIK</div>
