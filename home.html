@@ -2,30 +2,37 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title></title>
+<title>ENGGAL JAYA</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f2f2f2;padding-bottom:80px}
-.header{background:#8b0000;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+body{background:#fff;padding-bottom:80px}
+.header{background:#8b0000;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
 .logo{font-weight:900;white-space:nowrap}
-.menu{display:flex;gap:10px;font-size:12px}
-.menu a{color:#fff;text-decoration:none;opacity:.8}
-.menu a.active{border-bottom:2px solid #ff0;opacity:1;font-weight:bold}
+.menu{display:flex;gap:8px;font-size:12px}
+.menu a{color:#fff;text-decoration:none;opacity:.9; position:relative; padding:6px 14px; border:1px solid rgba(255,255,0,.4); border-radius:20px; overflow:hidden; z-index:1; transition:.3s;}
+.menu a::before{content:'';position:absolute;top:0;left:0;width:0%;height:100%;background:#ff0;z-index:-1;transition:.25s ease;}
+.menu a:hover::before{width:100%;}
+.menu a:hover{color:#8b0000; font-weight:bold; opacity:1;}
+.menu a.active{border-bottom:none; background:#ff0; color:#8b0000; opacity:1; font-weight:bold}
 .hero{height:380px;background:#333 url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800') center/cover;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
 .hero::after{content:'';position:absolute;inset:0;background:rgba(80,0,0,.6)}
 .hero-inner{position:relative;z-index:2}
 .hero-inner h1 span{color:#ff0}
-.btn{display:inline-block;margin-top:12px;background:#ff0;color:#400;padding:8px 18px;font-weight:900;text-decoration:none;font-size:12px}
+.btn{display:inline-block;margin-top:12px;background:#ff0;color:#400;padding:8px 18px;font-weight:900;text-decoration:none;font-size:12px; border-radius:20px;}
 .about{background:#fff;padding:28px 18px}
 .about h2{color:#8b0000;text-align:center;margin-bottom:12px}
 .about p{font-size:17px;line-height:1.8;color:#222;text-align:left}
 .red{color:#b00000;font-weight:900}
-.list{margin:14px 0 14px 18px}
+/* MELAYANI - TARUH PAS DISINI */
+.melayani-box{margin:18px 0; padding:14px 16px; background:#fffbe6; border:1.5px dashed #8b0000; border-radius:10px;}
+.melayani-box b{color:#8b0000;}
+.melayani-box ul{list-style:none; margin-top:8px; padding:0;}
+.melayani-box li{margin:4px 0; font-weight:bold; font-size:15px;}
+.list{margin:18px 0 14px 18px}
 .list li{margin-bottom:12px;font-size:17px;line-height:1.7}
 .footer{background:#2b0000;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;font-size:11px}
 .footer a{color:#fff;text-decoration:none}
 .wa{position:fixed;bottom:18px;right:12px;z-index:9999;display:flex;align-items:center;gap:8px}
-.wa-b{bgckground:#fff}
 .wa-bubble{background:#fff;padding:7px 12px;border-radius:18px;font-size:12px;font-weight:700;box-shadow:0 2px 10px rgba(0,0,0,.2)}
 .wa-btn{background:#25D366;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .wa-btn img{width:28px}
@@ -33,13 +40,27 @@ body{background:#f2f2f2;padding-bottom:80px}
 </head>
 <body>
 <div class="header">
-<div class="logo"><img src="logo.png" style="width:150px;height:45px;"> <span></span></div>
+<div class="logo"><img src="logo.png" style="width:80px;height:35px;"></div>
 <div class="menu"><a href="home.html" class="active">HOME</a><a href="about.html">ABOUT</a><a href="photos.html">SHOWCASE</a></div>
 </div>
+
 <div class="hero"><div class="hero-inner"><h1>KOLTER & <span>GRINDING</span><br>SLEEVE CRANKSHAFT</h1><a class="btn" href="photos.html">VIEW SHOWCASE</a></div></div>
+
 <div class="about">
 <h2>WELCOME TO ENGGAL JAYA</h2>
 <p><b>ENGGAL JAYA</b> adalah bengkel spesialis <span class="red">kolter, grinding, sleeve crankshaft, dan cylinder head</span> di Sidoarjo - Surabaya.</p>
+
+<!-- MELAYANI - UDAH AKU TAMBAHIN SESUAI REQUEST -->
+<div class="melayani-box">
+<b>Melayani :</b>
+<ul>
+<li>• KOLTER</li>
+<li>• SLEEVE CRANKSHAFT</li>
+<li>• GRINDING</li>
+<li>• SEATING SILINDER HEAD</li>
+</ul>
+</div>
+
 <ul class="list">
 <li><span class="red">1. KOLTER BLOK MESIN</span><br>Mengembalikan silinder aus / baret dengan presisi tinggi.</li>
 <li><span class="red">2. GRINDING CRANKSHAFT</span><br>Grinding kruk as oleng sesuai oversize, hasil halus & balance.</li>
@@ -48,29 +69,25 @@ body{background:#f2f2f2;padding-bottom:80px}
 </ul>
 <p><span class="red">Kenapa ENGGAL JAYA?</span> Presisi terjamin, harga bengkel, cepat 1-2 hari, konsultasi gratis.<br><br><b>Komitmen: <span class="red">Kualitas Terjamin, Kepuasan Client.</span></b></p>
 </div>
-  <audio id="musikEnggal" loop autoplay style="display:none">
-  <source src="./Kiss the Rain - Yiruma.mp3" type="audio/mpeg">
-</audio>
-<script>
-  const musik = document.getElementById('musikEnggal');
-  musik.volume = 0.8;
-  // karena udah klik ENTER tadi, browser Vivo ngizinin bunyi
-  musik.play().catch(()=>{});
-</script>
-  <div style="background:#ffffff;padding:15px;border-radius:10px;margin:15px 10px;border:2px solid #ff0">
-  <p style="font-size:14px;line-height:1.8;color:#000000;font-weight:bold">
-    <span style="color:#a80000">📍 ALAMAT KAMI :</span><br>
-    <span style="color:#000">Jl. Mbah Oteh, Wadung - Wadungasih,<br>
-    Buduran - Sidoarjo 61252</span><br>
-    <span style="color:#555;font-size:12px">( Kode Maps: HPJJ+8X5 )</span>
-  </p>
-  
-  <p style="font-size:14px;line-height:1.8;color:#000000;font-weight:bold;margin-top:10px;border-top:1px dashed #ccc;padding-top:10px">
-    <span style="color:#a80000">📞 NOMER TLP BENGKEL :</span><br>
-    <a href="tel:0815257778263" style="color:#075e54;text-decoration:none;font-size:18px;background:#e0f5e0;padding:4px 10px;border-radius:5px;display:inline-block;margin-top:5px">08152-5777-8263</a>
-  </p>
-  </div>
+
+<div style="background:#ffffff;padding:15px;border-radius:10px;margin:15px 10px;border:2px solid #ff0">
+<p style="font-size:14px;line-height:1.8;color:#000000;font-weight:bold">
+<span style="color:#a80000">📍 ALAMAT KAMI :</span><br>
+<span style="color:#000">Jl. Mbah Oteh, Wadung - Wadungasih,<br>Buduran - Sidoarjo 61252</span><br>
+<span style="color:#555;font-size:12px">( Kode Maps: HPJJ+8X5 )</span>
+</p>
+<p style="font-size:14px;line-height:1.8;color:#000000;font-weight:bold;margin-top:10px;border-top:1px dashed #ccc;padding-top:10px">
+<span style="color:#a80000">📞 NOMER TLP BENGKEL :</span><br>
+<a href="tel:0815257778263" style="color:#075e54;text-decoration:none;font-size:18px;background:#e0f5e0;padding:4px 10px;border-radius:5px;display:inline-block;margin-top:5px">08152-5777-8263</a>
+</p>
+</div>
+
 <div class="footer"><a href="home.html">← Back</a><span>Designed & Created by Embuh</span><a href="#">Top ↑</a></div>
 <div class="wa"><div class="wa-bubble">Butuh bantuan?</div><a class="wa-btn" href="https://wa.me/6283856058316?text=Halo%20ENGGAL%20JAYA" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a></div>
+
+<audio id="musikEnggal" loop autoplay style="display:none"><source src="./Kiss the Rain - Yiruma.mp3" type="audio/mpeg"></audio>
+<script>
+const musik=document.getElementById('musikEnggal'); musik.volume=0.8; musik.play().catch(()=>{});
+</script>
 </body>
 </html>
